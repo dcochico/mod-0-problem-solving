@@ -41,3 +41,21 @@ for (var i = 0; i < sortedArray.length; i++) {
 }
 
 // Given a sentence with only lowercase letters, print the same sentence with the first letter of every word capitalized. For example, if you were given "Turing is the best", return "Turing Is The Best" instead!
+var randomSentence = "turing is the best";
+
+function capitalizeFirstLetter(sentence) {
+    var sentenceArray = sentence.split(" ")
+    // Comment: The .split() method splits a string, as determined by the parameter, into a list of substrings and puts these substrings into an array.
+    // Comment: In this case, the parameter is a blank space, which means that everything in our string that exists between these spaces will become its own element in a new array.
+    // Comment: Declaring a variable sentenceArray and assigning it to this array.
+    revisedArray = sentenceArray.map(x => x[0].toUpperCase() + x.substr(1))
+    // Comment: The .map() method modifies the elements of an array, as determined by the function.
+    // Comment: The .substr() method returns the portion of a string beginning with the index position given in the parameter.
+    // Comment: In this case, the character in index position zero of each element will be capitalized. We will add this to the portion of the element beginning with the character at index position 1.
+    var revisedSentence = revisedArray.join(" ")
+    // Comment: Now, we will join each element in the array with the specified parameter.
+    // Comment: In this case, we will join each element with a space.
+    return revisedSentence;
+}
+
+console.log(capitalizeFirstLetter(randomSentence));
